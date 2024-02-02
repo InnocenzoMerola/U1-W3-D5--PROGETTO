@@ -505,7 +505,7 @@ deleteList();
 
 const classi = () => {
   const tr = document.querySelectorAll("tr");
-  tr.classList.add("test");
+  tr.className("test");
 };
 classi();
 // [EXTRA] JS Avanzato
