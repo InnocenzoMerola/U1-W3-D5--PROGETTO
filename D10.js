@@ -416,11 +416,11 @@ function searchAndDivide(str) {}
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
 
-function removeIndex(numb) {
-  const tabMovie = movies.slice(numb, 0);
-  return tabMovie;
+function removeIndex(numb, movies) {
+  movies.splice(numb, 1);
+  return movies;
 }
-console.log(removeIndex(2));
+console.log("Es. 19: ", removeIndex(12, movies));
 
 // DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
 
@@ -443,7 +443,7 @@ function tagSelect() {
   const td = document.querySelectorAll("td");
 }
 
-console.log("Es. 21: ", tagSelect());
+// console.log("Es. 21: ", tagSelect());
 
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
@@ -454,13 +454,13 @@ function tdContent() {
 
   for (let i = 0; i < td.length; i++) {
     oneTd = td[i].innerText;
-    console.log(oneTd);
+    console.log("Es. 22: ", oneTd);
   }
 
-  //   td.forEach((td) => {
-  //     const content = td.content;
-  //     console.log(content);
-  //   });
+  // td.forEach((td) => {
+  //   const content = td.textContent;
+  //   console.log(content);
+  // });
 }
 tdContent();
 
@@ -493,16 +493,20 @@ ulList();
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
 
-// deleteUl(() => {});
+const deleteList = () => {
+  const ul = document.getElementById("myList");
+  ul.remove("li");
+};
+deleteList();
 
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
 
-function classi() {
+const classi = () => {
   const tr = document.querySelectorAll("tr");
   tr.classList.add("test");
-}
+};
 classi();
 // [EXTRA] JS Avanzato
 
